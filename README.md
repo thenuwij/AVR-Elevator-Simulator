@@ -1,32 +1,67 @@
-# DESN2000 Computer Stream Project Template
+# AVR2560 Elevator Simulator
 
-Welcome to the DESN2000 Computer Stream Template Repository! This repository serves as a template for your DESN2000 Computer Stream project for 23T2. Follow the instructions below to create your own private repository based on this template:
+This project simulates a real-world elevator system using the Atmega2560 microcontroller. The elevator accepts user inputs through a keypad and provides output via an LCD, LEDs, and a rotating motor. It also includes core safety features such as an emergency return mechanism.
 
-1. One team member should click on the "Use this template" button to create a new repository based on this template.
-2. When creating the new repository, make sure to set it as **private** to protect your project code. (you may set it as public once the term is done to show your work!)
-3. Rename the new repository to include your team ID.
-4. Add your team members and course tutors as collaborators to the repository to grant them access.
-5. Happy coding!
+**Developed by:**  
+Thenuja Wijesuriya, Zhongtai Zhang, Yicong Chen, Yuanxu Sun
 
+## Features
 
-> Remember to regularly commit and push your changes to keep your project repository up to date.
+- Floor selection using keypad (0–9)  
+- Real-time floor updates via LEDs and LCD display  
+- Automatic and manual door control using push-button and timer  
+- Emergency protocol triggered by `*` key  
+- Fully modularized and documented code
 
-## Repository Contents
+## Hardware Requirements
 
-The template repository includes the following components:
+- Atmega2560 Board  
+- USB Type-B to Type-A cable  
+- Wired connections (motor, LED, LCD, push-button, keypad)  
+- Computer with Windows OS or Virtual Machine
 
-- **src/**: This directory is meant to hold your project's source code, written in AVR assembly. Currently there is one file, `main.s` in the directory. Feel free to modify, rename it as you wish.
-- **docs/user-guide.md**: Use this file to provide instructions on how to use your product. *Refer to the project brief on what is required.*
-- **docs/dev-guide.md**: This file serves as a developer guide, providing information for other developers to start working with your code. *Refer to the project brief on what is required.*
+## Software Requirements
 
+- Arduino IDE  
+- Microchip Studio  
+- AVRDUDE tool for flashing
 
-## Collaboration
+## Documentation
 
-To facilitate collaboration and feedback, add your team members and course tutors as collaborators to your private repository. This allows them to access and contribute to the project. To add new collaborators:
-1. Navigate to "Settings" -> "Collaborators" (under "Access") in your repo
-2. Click on "Add people" under "Manage access"
-3. Add your team members
-4. Add your tutors
-    - Kenny: `Lycheus`
-    - Kisaru: `kisarur`
-    - Elton: `beebdev`
+- **User Guide:** Step-by-step setup and usage instructions  
+- **Developer Guide:** Code structure, functions, and extension instructions (both in `docs/` folder)
+
+## Key Functionalities
+
+| Component    | Functionality                                      |
+|--------------|----------------------------------------------------|
+| Keypad       | Select floor (0–9), `*` for emergency return       |
+| LEDs         | Display floor transitions and emergency status     |
+| LCD          | Show current and next floor; emergency messages    |
+| Motor        | Simulates door open/close sequence                 |
+| Push Button  | Manually close the door while stationary           |
+
+## Build & Upload Instructions
+
+1. Connect the Atmega2560 board via USB  
+2. Open the project using **Microchip Studio** or **Arduino IDE**  
+3. Flash the code to the board using **AVRDUDE** or IDE's built-in tools  
+4. Use the configuration and I/O mappings described in `docs/user-guide.md`
+
+## Troubleshooting
+
+- If motor, LCD, or LEDs are unresponsive: verify wiring (e.g., PE4 for motor)
+- If keypad input is unrecognized: ensure the COM port and connections are correct
+- If LCD is stuck in emergency mode: press `*` again to reset
+
+## Project Structure
+
+elevator-simulator/
+├── src/ # Main source files
+├── include/ # Header files
+├── docs/
+│ ├── dev-guide.md # Developer documentation
+│ └── user-guide.md # User documentation
+├── images/ # Circuit diagrams and screenshots
+├── README.md # This file
+└── .gitignore
