@@ -56,12 +56,14 @@ Thenuja Wijesuriya, Zhongtai Zhang, Yicong Chen, Yuanxu Sun
 
 ## Project Structure
 
+```text
 elevator-simulator/
-├── src/ # Main source files
-├── include/ # Header files
+├── src/                 # Main source files
+├── include/             # Header files
 ├── docs/
-│ ├── dev-guide.md # Developer documentation
-│ └── user-guide.md # User documentation
-├── images/ # Circuit diagrams and screenshots
-├── README.md # This file
+│   ├── dev-guide.md     # Developer documentation
+│   └── user-guide.md    # User documentation
+├── images/              # Circuit diagrams and screenshots
+├── README.md            # This file
 └── .gitignore
+
