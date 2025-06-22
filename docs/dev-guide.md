@@ -1,26 +1,5 @@
 # Emulator Developer Guide
 
-<!--- Group info -->
-<p align="center">
-UNSW DESN200 23T2 (COMP)
-</p>
-<p align="center">
-Group: "Group C"
-</p>
-<p align="center">
-Members: Thenuja Wijesuriya(z5343238), Zhongtai Zhang(z5330019), Yicong Chen(z5292435), Yuanxu Sun(z5292226)
-</p>
-<!--- Group info -->
-
-
----
-
-<!--- Remove the following -->
-The developer guide is an essential document that describes the design of your code for future developers who may need to extend, optimize, or fix bugs in the codebase. This guide assumes that you are no longer available to offer assistance to future engineers, so it should be comprehensive and easy to understand.
-
-Please modify this template `dev-guide.md` file to create your own developer guide. Make sure to follow the instructions provided and refer to the [Markdown Guide Cheat Sheet](https://www.markdownguide.org/cheat-sheet/) for Markdown syntax.
-
-
 ## Table of Contents
 
 1. [Introduction](#introduction)
