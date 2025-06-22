@@ -1,19 +1,5 @@
 # Emulator User Guide
 
-<!--- Group info -->
-<p align="center">
-UNSW DESN200 23T2 (COMP)
-</p>
-<p align="center">
-Group: "Group C"
-</p>
-<p align="center">
-Members:  Thenuja Wijesuriya(z5343238), Zhongtai Zhang(z5330019), Yicong Chen(z5292435), Yuanxu Sun(z5292226)
-</p>
-<!--- Group info -->
-
----
-
 ## Table of Contents
 
 1. [Introduction](#introduction)
