@@ -1,6 +1,6 @@
 # AVR2560 Elevator Simulator
 
-This project simulates a real-world elevator system using the Atmega2560 microcontroller. The elevator accepts user inputs through a keypad and provides output via an LCD, LEDs, and a rotating motor. It also includes core safety features such as an emergency return mechanism.
+This project simulates a real-world elevator system using the Atmega2560 microcontroller. The elevator accepts user inputs through a keypad and provides output via an LCD, LEDs, and a rotating motor. It also includes core safety features such as an emergency return mechanism. This was developed as the final project for the course DESN2000.
 
 **Developed by:**  
 Thenuja Wijesuriya, Zhongtai Zhang, Yicong Chen, Yuanxu Sun
