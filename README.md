@@ -58,12 +58,12 @@ Thenuja Wijesuriya, Zhongtai Zhang, Yicong Chen, Yuanxu Sun
 
 ```text
 elevator-simulator/
-├── src/                 # Main source files
-├── include/             # Header files
 ├── docs/
-│   ├── dev-guide.md     # Developer documentation
-│   └── user-guide.md    # User documentation
-├── images/              # Circuit diagrams and screenshots
-├── README.md            # This file
-└── .gitignore
-
+│   ├── dev-guide.md         # Developer documentation
+│   ├── user-guide.md        # User documentation
+│   ├── extend code/         # Additional extension assembly files
+│   └── images/              # Circuit diagrams and screenshots
+├── src/
+│   └── main.s               # Main elevator control source file
+├── .gitignore
+└── README.md                # Project overview and setup instructions
