@@ -34,7 +34,7 @@ The system implements elevator control logic entirely in AVR assembly, accepting
 ## Tools
 
 - Microchip Studio (AVR assembly, flashing)
-- AVRDUDE
+- AVRDUDE (firmware flashing over serial/USB)
 
 ## Project Structure
 
