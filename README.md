@@ -4,12 +4,12 @@ A simulated multi-floor elevator system built on the ATmega2560 microcontroller,
 
 ## Overview
 
-The system implements elevator control logic entirely in AVR assembly, accepting floor requests via a keypad and managing floor transitions, door sequencing, and emergency handling through direct hardware register manipulation — no operating system or HAL layer.
+The system implements elevator control logic entirely in AVR assembly, accepting floor requests via a keypad and managing floor transitions, door sequencing, and emergency handling through direct hardware register manipulation with no operating system or HAL layer.
 
 ## System Design
 
 **Input handling**
-- 4x4 matrix keypad scanned via GPIO polling — digits 0–9 select target floors, `*` triggers emergency return
+- 4x4 matrix keypad scanned via GPIO polling - digits 0–9 select target floors, `*` triggers emergency return
 - Push button for manual door close while stationary
 
 **Control logic**
