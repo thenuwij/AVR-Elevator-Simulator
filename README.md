@@ -1,69 +1,50 @@
-# AVR2560 Elevator Simulator
+# AVR Elevator Simulator
 
-This project simulates a real-world elevator system using the Atmega2560 microcontroller. The elevator accepts user inputs through a keypad and provides output via an LCD, LEDs, and a rotating motor. It also includes core safety features such as an emergency return mechanism. This was developed as the final project for the course DESN2000.
+A simulated multi-floor elevator system built on the ATmega2560 microcontroller, developed as the final project for DESN2000 (Engineering Design and Professional Practice) at UNSW Sydney, in collaboration with Zhongtai Zhang, Yicong Chen, and Yuanxu Sun.
 
-**Developed by:**  
-Thenuja Wijesuriya, Zhongtai Zhang, Yicong Chen, Yuanxu Sun
+## Overview
 
-## Features
+The system implements elevator control logic entirely in AVR assembly, accepting floor requests via a keypad and managing floor transitions, door sequencing, and emergency handling through direct hardware register manipulation — no operating system or HAL layer.
 
-- Floor selection using keypad (0–9)  
-- Real-time floor updates via LEDs and LCD display  
-- Automatic and manual door control using push-button and timer  
-- Emergency protocol triggered by `*` key  
-- Fully modularized and documented code
+## System Design
 
-## Hardware Requirements
+**Input handling**
+- 4x4 matrix keypad scanned via GPIO polling — digits 0–9 select target floors, `*` triggers emergency return
+- Push button for manual door close while stationary
 
-- Atmega2560 Board  
-- USB Type-B to Type-A cable  
-- Wired connections (motor, LED, LCD, push-button, keypad)  
-- Computer with Windows OS or Virtual Machine
+**Control logic**
+- Floor sequencing and direction logic written in AVR assembly
+- Timer-driven automatic door open/close with configurable dwell time
+- Emergency protocol on `*` input: cancels queued requests, returns to ground floor, holds doors open
 
-## Software Requirements
+**Output peripherals**
+- LED bank reflects current floor and transition state
+- LCD displays current floor, target floor, and emergency status messages
+- DC motor simulates door open/close mechanism, driven via PWM on PE4
 
-- Arduino IDE  
-- Microchip Studio  
-- AVRDUDE tool for flashing
+## Hardware
 
-## Documentation
+- ATmega2560 development board
+- 4x4 matrix keypad
+- 16x2 LCD display
+- LED array
+- DC motor with driver circuit
+- Push button
 
-- **User Guide:** Step-by-step setup and usage instructions  
-- **Developer Guide:** Code structure, functions, and extension instructions (both in `docs/` folder)
+## Tools
 
-## Key Functionalities
-
-| Component    | Functionality                                      |
-|--------------|----------------------------------------------------|
-| Keypad       | Select floor (0–9), `*` for emergency return       |
-| LEDs         | Display floor transitions and emergency status     |
-| LCD          | Show current and next floor; emergency messages    |
-| Motor        | Simulates door open/close sequence                 |
-| Push Button  | Manually close the door while stationary           |
-
-## Build & Upload Instructions
-
-1. Connect the Atmega2560 board via USB  
-2. Open the project using **Microchip Studio** or **Arduino IDE**  
-3. Flash the code to the board using **AVRDUDE** or IDE's built-in tools  
-4. Use the configuration and I/O mappings described in `docs/user-guide.md`
-
-## Troubleshooting
-
-- If motor, LCD, or LEDs are unresponsive: verify wiring (e.g., PE4 for motor)
-- If keypad input is unrecognized: ensure the COM port and connections are correct
-- If LCD is stuck in emergency mode: press `*` again to reset
+- Microchip Studio (AVR assembly, flashing)
+- AVRDUDE
 
 ## Project Structure
 
 ```text
 elevator-simulator/
 ├── docs/
-│   ├── dev-guide.md         # Developer documentation
-│   ├── user-guide.md        # User documentation
-│   ├── extend code/         # Additional extension assembly files
-│   └── images/              # Circuit diagrams and screenshots
+│   ├── dev-guide.md
+│   ├── user-guide.md
+│   └── extend code/
 ├── src/
-│   └── main.s               # Main elevator control source file
-├── .gitignore
-└── README.md                # Project overview and setup instructions
+│   └── main.s
+└── README.md
+```
